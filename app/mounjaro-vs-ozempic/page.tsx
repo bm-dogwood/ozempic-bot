@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { pageSEO, SITE_URL } from "@/lib/seo-config";
-import { generateFAQSchema, generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import {
+  generateFAQSchema,
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 import SEOPageLayout from "@/components/SEOPageLayout";
 
 const seo = pageSEO["mounjaro-vs-ozempic"];
@@ -16,7 +20,11 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${seo.canonicalPath}`,
     type: "article",
   },
-  twitter: { card: "summary_large_image", title: seo.title, description: seo.description },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+  },
 };
 
 const faqs = [
@@ -49,7 +57,11 @@ const faqs = [
 
 const schemas = [
   generateFAQSchema(faqs),
-  generateArticleSchema({ title: seo.title, description: seo.description, path: seo.canonicalPath }),
+  generateArticleSchema({
+    title: seo.title,
+    description: seo.description,
+    path: seo.canonicalPath,
+  }),
   generateBreadcrumbSchema([
     { name: "Home", path: "/" },
     { name: "Mounjaro vs Ozempic", path: seo.canonicalPath },
@@ -62,67 +74,110 @@ export default function MounjaroVsOzempicPage() {
       <h1>Mounjaro vs Ozempic: Which GLP-1 Drug Is Right for You?</h1>
 
       <p>
-        Two medications dominate the GLP-1 conversation in 2024: <strong>Ozempic</strong>{" "}
-        (semaglutide, by Novo Nordisk) and <strong>Mounjaro</strong> (tirzepatide, by Eli Lilly).
-        Both are injectable weekly drugs that control blood sugar and cause significant weight loss,
-        but they work differently and produce different outcomes. Here's a thorough comparison to
-        help you and your doctor make an informed choice.
+        Two medications dominate the GLP-1 conversation in 2024:{" "}
+        <strong>Ozempic</strong> (semaglutide, by Novo Nordisk) and{" "}
+        <strong>Mounjaro</strong> (tirzepatide, by Eli Lilly). Both are
+        injectable weekly drugs that control blood sugar and cause significant
+        weight loss, but they work differently and produce different outcomes.
+        Here's a thorough comparison to help you and your doctor make an
+        informed choice.
       </p>
 
       <h2>Mechanism of Action: The Core Difference</h2>
       <p>
-        <strong>Ozempic</strong> is a <em>GLP-1 receptor agonist</em>. It mimics the
-        glucagon-like peptide-1 hormone, stimulating insulin secretion, suppressing glucagon, slowing
-        gastric emptying, and signaling satiety to the brain.
+        <strong>Ozempic</strong> is a <em>GLP-1 receptor agonist</em>. It mimics
+        the glucagon-like peptide-1 hormone, stimulating insulin secretion,
+        suppressing glucagon, slowing gastric emptying, and signaling satiety to
+        the brain.
       </p>
       <p>
-        <strong>Mounjaro</strong> is a <em>dual GIP and GLP-1 receptor agonist</em>—the first of
-        its class. In addition to GLP-1 activity, it activates GIP (glucose-dependent
-        insulinotropic polypeptide) receptors. GIP normally stimulates insulin release in response
-        to food and may also affect fat tissue directly. This dual action is believed to explain
-        Mounjaro's superior weight loss results in trials.
+        <strong>Mounjaro</strong> is a{" "}
+        <em>dual GIP and GLP-1 receptor agonist</em>—the first of its class. In
+        addition to GLP-1 activity, it activates GIP (glucose-dependent
+        insulinotropic polypeptide) receptors. GIP normally stimulates insulin
+        release in response to food and may also affect fat tissue directly.
+        This dual action is believed to explain Mounjaro's superior weight loss
+        results in trials.
       </p>
 
       <h2>Clinical Trial Comparison</h2>
 
       <h3>Weight Loss</h3>
       <p>
-        The SURMOUNT-1 trial (Mounjaro for obesity) and the STEP-1 trial (semaglutide/Wegovy for
-        obesity) used different populations and timeframes but offer a useful comparison:
+        The SURMOUNT-1 trial (Mounjaro for obesity) and the STEP-1 trial
+        (semaglutide/Wegovy for obesity) used different populations and
+        timeframes but offer a useful comparison:
       </p>
-      <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1.5rem" }}>
+      <table
+        style={{
+          borderCollapse: "collapse",
+          width: "100%",
+          marginBottom: "1.5rem",
+        }}
+      >
         <thead>
           <tr style={{ background: "#f0f4ff" }}>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Drug</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Trial</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Max Dose</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Avg Weight Loss</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Duration</th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Drug
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Trial
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Max Dose
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Avg Weight Loss
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Duration
+            </th>
           </tr>
         </thead>
         <tbody>
           {[
-            ["Tirzepatide (Mounjaro)", "SURMOUNT-1", "15 mg/week", "~20.9% body weight", "72 weeks"],
-            ["Semaglutide (Wegovy/Ozempic)", "STEP-1", "2.4 mg/week", "~14.9% body weight", "68 weeks"],
+            [
+              "Tirzepatide (Mounjaro)",
+              "SURMOUNT-1",
+              "15 mg/week",
+              "~20.9% body weight",
+              "72 weeks",
+            ],
+            [
+              "Semaglutide (Wegovy/Ozempic)",
+              "STEP-1",
+              "2.4 mg/week",
+              "~14.9% body weight",
+              "68 weeks",
+            ],
           ].map((row) => (
             <tr key={row[0]}>
               {row.map((cell, i) => (
-                <td key={i} style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>{cell}</td>
+                <td
+                  key={i}
+                  style={{
+                    border: "1px solid #ddd",
+                    padding: "0.5rem 0.75rem",
+                  }}
+                >
+                  {cell}
+                </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
       <p>
-        In the head-to-head SURPASS-2 trial (both drugs at FDA-approved diabetes doses), tirzepatide
-        produced greater A1C reductions and more weight loss than semaglutide 1 mg at all doses
-        tested.
+        In the head-to-head SURPASS-2 trial (both drugs at FDA-approved diabetes
+        doses), tirzepatide produced greater A1C reductions and more weight loss
+        than semaglutide 1 mg at all doses tested.
       </p>
 
       <h3>Blood Sugar Control</h3>
       <p>
-        Both drugs are highly effective for Type 2 diabetes. SURPASS-2 data showed tirzepatide
-        5 mg, 10 mg, and 15 mg each outperformed semaglutide 1 mg on A1C reduction:
+        Both drugs are highly effective for Type 2 diabetes. SURPASS-2 data
+        showed tirzepatide 5 mg, 10 mg, and 15 mg each outperformed semaglutide
+        1 mg on A1C reduction:
       </p>
       <ul>
         <li>Tirzepatide 5 mg: −2.01% A1C</li>
@@ -131,30 +186,44 @@ export default function MounjaroVsOzempicPage() {
         <li>Semaglutide 1 mg: −1.86% A1C</li>
       </ul>
       <p>
-        All differences were statistically significant. Mounjaro achieved A1C targets (&lt;7%) in
-        more patients than semaglutide in this trial.
+        All differences were statistically significant. Mounjaro achieved A1C
+        targets (&lt;7%) in more patients than semaglutide in this trial.
       </p>
 
       <h2>FDA Approvals</h2>
       <ul>
         <li>
-          <strong>Mounjaro</strong> — Approved May 2022 for Type 2 diabetes. Its obesity version,
-          <strong> Zepbound</strong> (same tirzepatide, higher dose ceiling), was approved November
-          2023 for chronic weight management.
+          <strong>Mounjaro</strong> — Approved May 2022 for Type 2 diabetes. Its
+          obesity version,
+          <strong> Zepbound</strong> (same tirzepatide, higher dose ceiling),
+          was approved November 2023 for chronic weight management.
         </li>
         <li>
-          <strong>Ozempic</strong> — Approved December 2017 for Type 2 diabetes + cardiovascular
-          risk reduction. Wegovy (higher-dose semaglutide) approved June 2021 for obesity + CV risk.
+          <strong>Ozempic</strong> — Approved December 2017 for Type 2 diabetes
+          + cardiovascular risk reduction. Wegovy (higher-dose semaglutide)
+          approved June 2021 for obesity + CV risk.
         </li>
       </ul>
 
       <h2>Side Effects Comparison</h2>
-      <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1.5rem" }}>
+      <table
+        style={{
+          borderCollapse: "collapse",
+          width: "100%",
+          marginBottom: "1.5rem",
+        }}
+      >
         <thead>
           <tr style={{ background: "#f0f4ff" }}>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Side Effect</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Mounjaro</th>
-            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>Ozempic</th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Side Effect
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Mounjaro
+            </th>
+            <th style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>
+              Ozempic
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -170,7 +239,15 @@ export default function MounjaroVsOzempicPage() {
           ].map((row) => (
             <tr key={row[0]}>
               {row.map((cell, i) => (
-                <td key={i} style={{ border: "1px solid #ddd", padding: "0.5rem 0.75rem" }}>{cell}</td>
+                <td
+                  key={i}
+                  style={{
+                    border: "1px solid #ddd",
+                    padding: "0.5rem 0.75rem",
+                  }}
+                >
+                  {cell}
+                </td>
               ))}
             </tr>
           ))}
@@ -178,54 +255,65 @@ export default function MounjaroVsOzempicPage() {
       </table>
 
       <h2>Cost Comparison</h2>
-      <p>
-        Both drugs are expensive without insurance:
-      </p>
+      <p>Both drugs are expensive without insurance:</p>
       <ul>
-        <li><strong>Ozempic:</strong> ~$935/month retail</li>
-        <li><strong>Mounjaro:</strong> ~$1,023–$1,070/month retail</li>
-        <li><strong>Wegovy:</strong> ~$1,350/month retail</li>
-        <li><strong>Zepbound:</strong> ~$1,059/month retail</li>
+        <li>
+          <strong>Ozempic:</strong> ~$935/month retail
+        </li>
+        <li>
+          <strong>Mounjaro:</strong> ~$1,023–$1,070/month retail
+        </li>
+        <li>
+          <strong>Wegovy:</strong> ~$1,350/month retail
+        </li>
+        <li>
+          <strong>Zepbound:</strong> ~$1,059/month retail
+        </li>
       </ul>
       <p>
-        Both Novo Nordisk and Eli Lilly offer savings cards for commercially insured patients.
-        Eli Lilly's Mounjaro Savings Card can reduce copays to as low as $25/month for eligible
-        patients.
+        Both Novo Nordisk and Eli Lilly offer savings cards for commercially
+        insured patients. Eli Lilly's Mounjaro Savings Card can reduce copays to
+        as low as $25/month for eligible patients.
       </p>
 
       <h2>Which Should You Choose?</h2>
       <p>
-        There is no universal winner—the right choice depends on your clinical situation, insurance,
-        and tolerance:
+        There is no universal winner—the right choice depends on your clinical
+        situation, insurance, and tolerance:
       </p>
       <ul>
         <li>
-          <strong>Choose Mounjaro/Zepbound if:</strong> Maximum weight loss is the priority, your
-          insurance covers it, and you're interested in the latest mechanism (dual GIP/GLP-1).
+          <strong>Choose Mounjaro/Zepbound if:</strong> Maximum weight loss is
+          the priority, your insurance covers it, and you're interested in the
+          latest mechanism (dual GIP/GLP-1).
         </li>
         <li>
-          <strong>Choose Ozempic/Wegovy if:</strong> You have diabetes with existing Ozempic
-          coverage, a longer track record matters to you, or Mounjaro is unavailable or unaffordable.
+          <strong>Choose Ozempic/Wegovy if:</strong> You have diabetes with
+          existing Ozempic coverage, a longer track record matters to you, or
+          Mounjaro is unavailable or unaffordable.
         </li>
       </ul>
       <p>
-        Both drugs are highly effective. The best medication is the one you can access, afford, and
-        tolerate—your physician is best positioned to guide that decision.
+        Both drugs are highly effective. The best medication is the one you can
+        access, afford, and tolerate—your physician is best positioned to guide
+        that decision.
       </p>
 
       <h2>Frequently Asked Questions</h2>
       {faqs.map((faq) => (
         <div key={faq.question} style={{ marginBottom: "1.25rem" }}>
-          <h3 style={{ fontSize: "1.05rem", marginBottom: "0.35rem" }}>{faq.question}</h3>
+          <h3 style={{ fontSize: "1.05rem", marginBottom: "0.35rem" }}>
+            {faq.question}
+          </h3>
           <p style={{ margin: 0 }}>{faq.answer}</p>
         </div>
       ))}
 
       <p style={{ marginTop: "2rem", fontSize: "0.85rem", color: "#666" }}>
         <em>
-          This page is for informational purposes only and is not a substitute for professional
-          medical advice. Drug efficacy, pricing, and approval status are subject to change. Always
-          consult your healthcare provider.
+          This page is for informational purposes only and is not a substitute
+          for professional medical advice. Drug efficacy, pricing, and approval
+          status are subject to change. Always consult your healthcare provider.
         </em>
       </p>
     </SEOPageLayout>
