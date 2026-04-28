@@ -11,9 +11,10 @@ const BRAND_TO_GENERIC: Record<string, string> = {
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { drug: string } }
+  { params }: { params: Promise<{ drug: string }> }
 ) {
-  const drug = params.drug.toLowerCase();
+  const { drug: rawDrug } = await params;
+  const drug = rawDrug.toLowerCase();
   const brandName = drug.charAt(0).toUpperCase() + drug.slice(1);
 
   try {
